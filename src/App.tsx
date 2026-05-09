@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/layout/Layout';
@@ -15,12 +16,9 @@ import Areas from './pages/Areas';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-// Area Pages
-import NoidaPage from './pages/areas/Noida';
-import BeauticianNoidaPage from './pages/areas/BeauticianNoida';
-import GhaziabadPage from './pages/areas/Ghaziabad';
-import IndirapuramPage from './pages/areas/Indirapuram';
-import DelhiNCRPage from './pages/areas/DelhiNCR';
+// Dynamic SEO Landing Page
+import LandingPage from './pages/LandingPage';
+import { landingPages } from './data/landingPages';
 
 // Legal Pages
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
@@ -41,11 +39,23 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
 
             {/* Local SEO Pages */}
-            <Route path="/salon-at-home-in-noida" element={<NoidaPage />} />
-            <Route path="/beautician-at-home-in-noida" element={<BeauticianNoidaPage />} />
-            <Route path="/salon-at-home-in-ghaziabad" element={<GhaziabadPage />} />
-            <Route path="/salon-at-home-in-indirapuram" element={<IndirapuramPage />} />
-            <Route path="/home-salon-services-in-delhi-ncr" element={<DelhiNCRPage />} />
+            {landingPages.map(page => (
+              <React.Fragment key={page.path}>
+                <Route 
+                  path={page.path} 
+                  element={
+                    <LandingPage 
+                      pageContent={{
+                        ...page,
+                        relatedPages: landingPages.filter(p => p.path !== page.path).slice(0, 4)
+                      }} 
+                    />
+                  } 
+                />
+              </React.Fragment>
+            ))}
+
+            {/* Old legacy redirects / keep paths if needed, let's keep them routing to landing page if they are standard paths, or just let them 404 since I've replaced them */}
 
             {/* Legal */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

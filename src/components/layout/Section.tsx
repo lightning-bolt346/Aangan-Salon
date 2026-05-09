@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { cn } from '@/src/lib/utils';
 import { FloralCorner } from './FloralCorner';
 
@@ -6,6 +6,8 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: ReactNode;
   containerClass?: string;
   hasFloralCorners?: boolean;
+  className?: string;
+  id?: string;
 }
 
 export function Section({ children, className, containerClass, hasFloralCorners, ...props }: SectionProps) {

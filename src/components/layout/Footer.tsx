@@ -20,10 +20,10 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-champagne">Service Areas</h4>
             <ul className="space-y-3 text-sm text-warm-ivory/90">
-              <li><Link to="/salon-at-home-in-noida" className="hover:text-soft-rose transition-colors">Noida</Link></li>
-              <li><Link to="/salon-at-home-in-ghaziabad" className="hover:text-soft-rose transition-colors">Ghaziabad</Link></li>
-              <li><Link to="/salon-at-home-in-indirapuram" className="hover:text-soft-rose transition-colors">Indirapuram</Link></li>
-              <li><Link to="/home-salon-services-in-delhi-ncr" className="hover:text-soft-rose transition-colors">Delhi NCR</Link></li>
+              <li><Link to="/salon-at-home-noida" className="hover:text-soft-rose transition-colors">Noida</Link></li>
+              <li><Link to="/salon-at-home-ghaziabad" className="hover:text-soft-rose transition-colors">Ghaziabad</Link></li>
+              <li><Link to="/salon-at-home-indirapuram" className="hover:text-soft-rose transition-colors">Indirapuram</Link></li>
+              <li><Link to="/home-salon-delhi-ncr" className="hover:text-soft-rose transition-colors">Delhi NCR</Link></li>
             </ul>
           </div>
 

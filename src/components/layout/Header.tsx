@@ -72,28 +72,31 @@ export function Header() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-warm-ivory z-50 overflow-y-auto pb-32">
-          <div className="px-6 py-8 flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="block text-2xl font-serif italic text-deep-plum py-4 border-b border-sand/50 last:border-0"
-                onClick={(e) => {
-                  setIsOpen(false);
-                  if (link.href.startsWith('/#') && window.location.pathname === '/') {
-                    e.preventDefault();
-                    setTimeout(() => {
-                      document.getElementById(link.href.substring(2))?.scrollIntoView({ behavior: 'smooth' });
-                      window.history.pushState(null, '', link.href);
-                    }, 100);
-                  }
-                }}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-8 flex flex-col gap-4 mt-4">
+        <div className="md:hidden fixed top-20 left-0 w-full h-[calc(100vh-5rem)] bg-warm-ivory z-50 overflow-y-auto border-t border-sand">
+          <div className="px-6 py-8 flex flex-col min-h-full">
+            <div className="space-y-1 flex-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="block text-2xl font-serif italic text-deep-plum py-4 border-b border-sand/50 last:border-0"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    if (link.href.startsWith('/#') && window.location.pathname === '/') {
+                      e.preventDefault();
+                      setTimeout(() => {
+                        document.getElementById(link.href.substring(2))?.scrollIntoView({ behavior: 'smooth' });
+                        window.history.pushState(null, '', link.href);
+                      }, 100);
+                    }
+                  }}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
+            <div className="pt-8 flex flex-col gap-4 mt-8 pb-10">
               <Button 
                 variant="outline" 
                 className="w-full bg-white"

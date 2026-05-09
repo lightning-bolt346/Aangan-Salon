@@ -25,23 +25,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aangansalon.com/salon-at-home-in-noida</loc>
+    <loc>https://aangansalon.com/salon-at-home-noida</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aangansalon.com/beautician-at-home-in-noida</loc>
+    <loc>https://aangansalon.com/beautician-at-home-noida</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aangansalon.com/salon-at-home-in-ghaziabad</loc>
+    <loc>https://aangansalon.com/facial-at-home-noida</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aangansalon.com/salon-at-home-in-indirapuram</loc>
+    <loc>https://aangansalon.com/waxing-at-home-noida</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aangansalon.com/home-salon-services-in-delhi-ncr</loc>
+    <loc>https://aangansalon.com/salon-at-home-ghaziabad</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aangansalon.com/salon-at-home-indirapuram</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aangansalon.com/home-salon-delhi-ncr</loc>
     <priority>0.9</priority>
   </url>
 </urlset>

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { cn } from '@/src/lib/utils';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,6 +9,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
   className?: string;
   children: ReactNode;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export function Button({ 

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 export default function Areas() {
   const areas = [
-    { name: "Noida", link: "/salon-at-home-in-noida", desc: "Serving Sectors 15-168, Noida Extension, and major societies." },
-    { name: "Ghaziabad", link: "/salon-at-home-in-ghaziabad", desc: "Available in Raj Nagar, Kavi Nagar, Vaishali, Vasundhara, and more." },
-    { name: "Indirapuram", link: "/salon-at-home-in-indirapuram", desc: "All khand/societies available for prompt service." },
-    { name: "Delhi NCR", link: "/home-salon-services-in-delhi-ncr", desc: "Select areas in East and South Delhi. Message us to check." }
+    { name: "Noida", link: "/salon-at-home-noida", desc: "Serving Sectors 15-168, Noida Extension, and major societies." },
+    { name: "Ghaziabad", link: "/salon-at-home-ghaziabad", desc: "Available in Raj Nagar, Kavi Nagar, Vaishali, Vasundhara, and more." },
+    { name: "Indirapuram", link: "/salon-at-home-indirapuram", desc: "All khand/societies available for prompt service." },
+    { name: "Delhi NCR", link: "/home-salon-delhi-ncr", desc: "Select areas in East and South Delhi. Message us to check." }
   ];
 
   return (

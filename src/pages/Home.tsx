@@ -6,7 +6,7 @@ import { ServiceCards } from '../components/ServiceCards';
 import { PackageCards } from '../components/PackageCards';
 import { HowItWorks } from '../components/HowItWorks';
 import { Testimonials } from '../components/Testimonials';
-import { FAQ } from '../components/FAQ';
+import { FAQ, faqs } from '../components/FAQ';
 import { BookingForm } from '../components/BookingForm';
 import { CheckCircle2, ShieldPlus } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -24,17 +24,28 @@ export default function Home() {
       "addressRegion": "UP",
       "addressCountry": "IN"
     },
-    "telephone": "+91XXXXXXXXXX",
-    "priceRange": "â¹â¹"
+    "telephone": "+91XXXXXXXXXX"
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
   return (
     <>
       <SEO 
         title="Salon Services at Home in Noida & NCR | Aangan Salon"
         description="Book trained female beauty professionals for facial, waxing, threading, manicure, pedicure and grooming services at your home in Noida, Ghaziabad and NCR."
         canonical="/"
-        schema={schema}
+        schema={[schema, faqSchema]}
       />
 
       {/* Hero Section */}
@@ -86,7 +97,7 @@ export default function Home() {
                 <div 
                   className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
                   style={{
-                    background: "linear-gradient(rgba(75, 30, 50, 0.2), rgba(75, 30, 50, 0.1)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800') center/cover"
+                    background: "linear-gradient(rgba(75, 30, 50, 0.2), rgba(75, 30, 50, 0.1)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800') center/cover"
                   }}
                 ></div>
               </div>
@@ -148,8 +159,8 @@ export default function Home() {
               </div>
             </div>
             <img 
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800" 
-              alt="Clean towels and premium products" 
+              src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=800" 
+              alt="Relaxing home salon service" 
               className="w-full aspect-[4/5] object-cover rounded-t-[4rem] rounded-b-[2rem] shadow-2xl border-4 border-white"
             />
           </div>
@@ -199,15 +210,10 @@ export default function Home() {
             Currently accepting bookings in selected sectors and societies. Share your area on WhatsApp to check availability.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {['Noida', 'Indirapuram', 'Ghaziabad', 'Delhi NCR'].map(area => (
-              <Link 
-                key={area}
-                to={`/salon-at-home-in-${area.toLowerCase().replace(' ', '-')}`}
-                className="px-6 py-3 bg-warm-ivory font-serif text-deep-plum rounded-full border border-sand hover:border-champagne transition-colors"
-               >
-                {area}
-              </Link>
-            ))}
+            <Link to="/salon-at-home-noida" className="px-6 py-3 bg-warm-ivory font-serif text-deep-plum rounded-full border border-sand hover:border-champagne transition-colors">Noida</Link>
+            <Link to="/salon-at-home-indirapuram" className="px-6 py-3 bg-warm-ivory font-serif text-deep-plum rounded-full border border-sand hover:border-champagne transition-colors">Indirapuram</Link>
+            <Link to="/salon-at-home-ghaziabad" className="px-6 py-3 bg-warm-ivory font-serif text-deep-plum rounded-full border border-sand hover:border-champagne transition-colors">Ghaziabad</Link>
+            <Link to="/home-salon-delhi-ncr" className="px-6 py-3 bg-warm-ivory font-serif text-deep-plum rounded-full border border-sand hover:border-champagne transition-colors">Delhi NCR</Link>
           </div>
         </div>
       </Section>

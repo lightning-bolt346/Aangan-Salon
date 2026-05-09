@@ -4,11 +4,13 @@ interface SEOProps {
   title: string;
   description: string;
   canonical?: string;
-  schema?: Record<string, any>;
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
 export function SEO({ title, description, canonical, schema }: SEOProps) {
   const absoluteUrl = canonical ? `https://aangansalon.com${canonical}` : undefined;
+  
+  const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
 
   return (
     <Helmet>
@@ -24,11 +26,11 @@ export function SEO({ title, description, canonical, schema }: SEOProps) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {schemas.map((s, idx) => (
+        <script type="application/ld+json" key={idx}>
+          {JSON.stringify(s)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }
